@@ -1,0 +1,465 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shah Alam Handyman</title>
+    <meta
+      name="description"
+      content="Tri-state local handyman from brooklyn ny"
+    />
+    <link
+      rel="icon"
+      href="/images/Shah.alam.png"
+      sizes="32x32"
+      type="image/png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* === styles.css START === */
+      :root {
+        --bg: #121212; /* near-black background */
+        --panel: #16181d; /* card bg */
+        --text: #e8eaf0; /* body text */
+        --muted: #aab0bd; /* secondary text */
+        --brand: #ffd166; /* warm accent */
+        --brand-2: #ffb703; /* secondary accent */
+        --link: #7ec8ff; /* link color */
+        --ok: #2ecc71;
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+        --radius: 18px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: var(--bg);
+        color: var(--text);
+        font: 16px/1.6 "Inter", system-ui, -apple-system, Segoe UI, Roboto,
+          Arial;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      a {
+        color: var(--link);
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .container {
+        width: min(1100px, 92%);
+        margin-inline: auto;
+      }
+      .section {
+        padding: 72px 0;
+      }
+      .kicker {
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--brand);
+        font-weight: 700;
+        font-size: 0.82rem;
+      }
+      .h1 {
+        font-size: clamp(1.8rem, 3.2vw + 1rem, 3.5rem);
+        line-height: 1.1;
+        margin: 0.2rem 0 0.75rem 0;
+        font-weight: 800;
+      }
+      .h2 {
+        font-size: clamp(1.4rem, 1.6vw + 1rem, 2rem);
+        line-height: 1.25;
+        margin: 0 0 0.6rem 0;
+        font-weight: 700;
+      }
+      .lead {
+        font-size: 1.1rem;
+        color: var(--muted);
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        background: var(--brand);
+        color: #111;
+        font-weight: 800;
+        border: 0;
+        padding: 14px 18px;
+        border-radius: 999px;
+        box-shadow: var(--shadow);
+      }
+      .btn:hover {
+        filter: brightness(1.05);
+      }
+      .pill {
+        display: inline-block;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 999px;
+        padding: 6px 12px;
+        color: var(--muted);
+      }
+      .grid {
+        display: grid;
+        gap: 20px;
+      }
+
+      /* Header */
+      header {
+        position: sticky;
+        top: 0;
+        background: rgba(14, 15, 18, 0.75);
+        backdrop-filter: saturate(160%) blur(8px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        z-index: 50;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 0;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+      }
+      .sun {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle at 30% 30%,
+          var(--brand),
+          var(--brand-2)
+        );
+        box-shadow: 0 0 30px rgba(255, 209, 102, 0.35);
+      }
+      .phone {
+        font-weight: 800;
+        color: var(--text);
+      }
+      .phone small {
+        color: var(--muted);
+        font-weight: 500;
+        display: block;
+        font-size: 0.75rem;
+      }
+
+      /* Hero */
+      .hero {
+        padding: 82px 0 56px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .hero-wrap {
+        display: grid;
+        gap: 32px;
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: center;
+      }
+      .hero .badge {
+        display: inline-flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .hero .badge .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--ok);
+      }
+      .hero figure {
+        border-radius: var(--radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        background: #0b0c0f;
+      }
+
+      @media (max-width: 900px) {
+        .hero-wrap {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Services */
+      .cards {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .card {
+        background: #1e1e1e;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: var(--radius);
+        padding: 20px;
+        box-shadow: var(--shadow);
+      }
+      .card img {
+        border-radius: 12px;
+        margin-bottom: 12px;
+      }
+      .card .list {
+        margin: 10px 0 0 18px;
+        color: var(--muted);
+      }
+      @media (max-width: 940px) {
+        .cards {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Testimonial */
+      .quote {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: 0.8fr 1.2fr;
+        align-items: center;
+      }
+      .quote blockquote {
+        margin: 0;
+        padding: 22px;
+        border-left: 4px solid var(--brand);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.04),
+          rgba(255, 255, 255, 0.02)
+        );
+        border-radius: 12px;
+      }
+      @media (max-width: 900px) {
+        .quote {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Contact */
+      .contact {
+        display: grid;
+        gap: 24px;
+        grid-template-columns: 1fr 1fr;
+      }
+      .card.contact-card {
+        padding: 26px;
+      }
+      .contact .hours {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+        color: var(--muted);
+      }
+      .contact .hours div {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 12px;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        border-radius: 10px;
+      }
+      @media (max-width: 900px) {
+        .contact {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Footer */
+      footer {
+        padding: 40px 0;
+        color: var(--muted);
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      /* === styles.css END === */
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container nav">
+        <div class="brand">
+          <div class="sun" aria-hidden="true"></div>
+          <div>
+            <div style="font-size: 1rem">Shah Alam</div>
+            <div class="pill">
+              All sorts of handyman services for home repairs and improvements.
+            </div>
+          </div>
+        </div>
+        <a class="phone" href="tel:+9293957425"
+          ><small>Call or text</small>(929)-395-7425</a
+        >
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero -->
+      <section class="hero">
+        <div class="container hero-wrap">
+          <div>
+            <div class="badge">
+              <span class="dot"></span
+              ><span class="pill">Serving the Tri-state Area</span>
+            </div>
+            <h1 class="h1">Professional small‑project handyman work.</h1>
+            <p class="lead">
+              Since more than two decades, I have been serving the Tri-state
+              area where I bring my years of experience to help me serve the
+              needs of my clients.
+            </p>
+            <p
+              style="
+                margin-top: 16px;
+                display: flex;
+                gap: 12px;
+                flex-wrap: wrap;
+              "
+            >
+              <a class="btn" href="tel:+9293957425">Call (929)-395-7425</a>
+              <a class="pill" href="#contact">Email?</a>
+            </p>
+          </div>
+          <figure>
+            <img
+              src="./images/Shah.alam.png"
+              alt="Friendly local handyman with squeegee and toolkit."
+            />
+          </figure>
+        </div>
+      </section>
+
+      <!-- Handyman Services -->
+      <section id="handyman" class="section" style="padding-top: 0">
+        <div class="container">
+          <p class="kicker">Handyman</p>
+          <h2 class="h2">Services I offer</h2>
+          <div class="grid cards" style="margin-top: 22px">
+            <article class="card">
+              <img
+                src="./images/bathroom.webp"
+                alt="Painting and drywall tools"
+              />
+              <h3 class="h2" style="font-size: 1.25rem">Bathroom</h3>
+              <ul class="list">
+                <li>
+                  Remove old fixtures, tiles, cabinets, and other outdated
+                  materials
+                </li>
+                <li>
+                  Install or replace sinks, faucets, vanities, toilets,
+                  bathtubs, and showers
+                </li>
+                <li>
+                  Tile floors and walls with grout work, plus caulk around wet
+                  areas
+                </li>
+                <li>
+                  Update walls, ceilings, lighting, exhaust fans, shelves,
+                  mirrors, and trim
+                </li>
+                <li>
+                  Make minor plumbing adjustments and general repairs as
+                  permitted by code
+                </li>
+                <li>and more...</li>
+              </ul>
+            </article>
+            <article class="card">
+              <img src="./images/flooring.jpg" alt="Cleaned rental unit" />
+              <h3 class="h2" style="font-size: 1.25rem">Flooring</h3>
+              <ul class="list">
+                <li>Install new hardwood or engineered wood flooring</li>
+                <li>Repair scratches, dents, gouges, or damaged planks</li>
+                <li>Replace warped or broken wood boards</li>
+                <li>
+                  Sand and refinish worn wood surfaces for a refreshed look
+                </li>
+                <li>
+                  Apply sealants or protective finishes to extend floor life
+                </li>
+                <li>and more...</li>
+              </ul>
+            </article>
+            <article class="card">
+              <img
+                src="./images/kitchen.webp"
+                alt="Floating shelves installed on a wall"
+              />
+              <h3 class="h2" style="font-size: 1.25rem">Kitchen</h3>
+              <ul class="list">
+                <li>
+                  Install or replace sinks, faucets, and garbage disposals (as
+                  allowed by code)
+                </li>
+                <li>
+                  Repair or reface cabinets, hardware, shelves, and storage
+                  solutions
+                </li>
+                <li>Install or repair backsplashes, flooring, and trim work</li>
+                <li>Patch, sand, and paint kitchen walls and ceilings</li>
+                <li>
+                  Upgrade or install lighting fixtures, under-cabinet lighting,
+                  and minor appliances
+                </li>
+                <li>and more...</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+      <!-- About & Hours / Contact -->
+      <section id="contact" class="section" style="padding-top: 0">
+        <div class="container contact">
+          <article class="card contact-card">
+            <h3 class="h2">Contact Shah</h3>
+            <p class="lead" style="margin: 0 0 10px">
+              Call or text:
+              <a class="phone" href="tel:+9293957425">(929)-395-7425</a>
+            </p>
+            <p class="lead" style="margin: 0 0 18px">
+              Email:
+              <a href="mailto:shahhandyman9@gmail.com"
+                >ShahHandyman9@gmail.com</a
+              >
+            </p>
+            <p class="lead">
+              Located within the tristate regions and expanding to ~30 mil
+              radius.
+            </p>
+          </article>
+          <article class="card contact-card">
+            <address style="margin-top: 12px; color: var(--muted)">
+              Shah Alam Brooklyn, NY
+            </address>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div
+        class="container"
+        style="
+          display: flex;
+          justify-content: space-between;
+          gap: 12px;
+          flex-wrap: wrap;
+        "
+      >
+        <div>© <span id="y"></span> Shah Alam</div>
+        <div>Made with ❤️ for local neighbors</div>
+      </div>
+    </footer>
+
+    <script>
+      // update footer year
+      document.getElementById("y").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
